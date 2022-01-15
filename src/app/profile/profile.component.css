@@ -1,0 +1,55 @@
+.profile{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.profileinfo{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: auto;
+    border: 1px solid black;
+}
+
+.imageandname{
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    border: 1px solid chartreuse;
+    height: 30vh;
+    padding: 2vw;
+}
+
+.image{
+    width: 23vw;
+    height: 25vh;
+    border-radius: 5px;
+    border:2px solid black;
+}
+.info{
+    width:40vw;
+    height: 25vh;
+    /* border: 1px solid chocolate; */
+    padding: 2vw;
+}
+.bioandint{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    border: 1px solid chartreuse;
+    min-height: 30vh;
+    padding: 2vw;
+}
+.cond{
+    width: 66vw;
+    overflow: scroll;
+    margin-bottom: 1vh;
+    min-height: 10vh;
+    text-decoration: none;
+    max-width: 66vw;
+    border: 1px solid green;
+    padding: 2vh;
+}
+p{
+    margin:0;
+}

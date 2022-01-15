@@ -1,0 +1,38 @@
+.feed{
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: space-around;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    display: inline-block;
+}
+.sec{
+    border: 1px solid black;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.post{
+    border: 1px solid black;
+    width: 60vw;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.intro{
+    display: flex;
+    align-items: center;
+    width: inherit;
+    height: 10vh;
+    justify-content: center;
+}
+.pro{
+    height: 9vh;
+    width: 5vw;
+    border-radius: 50%;
+}

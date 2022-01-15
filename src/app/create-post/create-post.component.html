@@ -1,0 +1,17 @@
+<div class="createcont">
+    <div class="infodiv"> <img [src]=image class="im" ><h5>{{name | capitalize}}  <small>{{today | date:'MMM d, y , h:mm a'}}</small></h5></div>
+    <form [formGroup]="postForm" (ngSubmit)="onPost(postForm)" >
+        <div style="margin-bottom: 1vh;" class="formrow">
+            <input class="smallinp" type="text" [formControl]='$any(postForm).controls.title' placeholder="Title">
+            <input class="smallinp" type="text" [formControl]='$any(postForm).controls.interest' placeholder="Interest(s) comma seperated">
+        </div>
+        <div style="height: 15vh; margin-bottom: 1vh;" class="formrow">
+            <!-- <input type="text" class="post" [formControl]="$any(postForm).controls.postdata" placeholder="Your Thought" > -->
+            <textarea  class="post" placeholder="Your Thought" cols="30" rows="10" [formControl]="$any(postForm).controls.postdata"></textarea>
+    
+        </div>
+        <div style="flex-direction: row;" class="formrow">
+            <button [disabled]="postForm.invalid" class="pb" type="submit">Post</button>
+        </div>
+    </form>
+</div>

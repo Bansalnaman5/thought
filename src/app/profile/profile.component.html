@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="profile">
+    <div class="profileinfo">
+        <h4 style="display: flex; justify-content: center; align-items: center;" >USER PROFILE</h4>
+        <div class="imageandname">
+            <div class="image"><img class="image" [src]="user.photo"></div>
+            <div class="info">
+                <h6>Name : {{user.firstname+" "+user.lastname |capitalize}}</h6>
+                <h6>Registered Email : {{user.email}} </h6>
+                <h6>Date Joined : {{user.dateCreated.toDate() | date:'MMM, d  ,y , h:mm a ' }} </h6>
+        </div>    
+        </div>
+        <div class="bioandint">
+            <h6>Interest</h6>
+            <input *ngIf="wantEdit" [(ngModel)]="interests" class="cond" value="naman bansal"  type="text">
+            <p *ngIf="!wantEdit" class="cond" >{{interests}}</p>
+            <h6>Bio</h6>
+            <input *ngIf="wantEdit" [(ngModel)]="bio" class="cond" type="text" value="naman bansal">
+            <p *ngIf="!wantEdit" class="cond" >{{bio}} </p>
+            <h6 *ngIf="userID==currUser.uid && !wantEdit" (click)="edit()" style="align-self: flex-end; cursor: pointer;">Edit Fields...</h6>
+            <h6 *ngIf="userID==currUser.uid && wantEdit" (click)="submitedit()" style="align-self: flex-end; cursor: pointer;">Apply Changes</h6>
+        </div>
+        <h5 style="margin-top: 1vh;">Thoughts By User</h5>
+        <app-post *ngFor="let post of posts" [post]='post' ></app-post>
+        
+    </div>
+</div>

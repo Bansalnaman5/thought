@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="postview">
+    <div class="post">
+        <div style="border: 1px solid black; display:flex; justify-content: center; align-items: center; font-size: 2rem;">Viewing Thought by {{currpost.name |capitalize}}</div>
+        <div class="userinfo">
+            <div class="image">
+                <img  class="image" [src]="currpost.image">
+            </div>
+            <div class="other">
+                <div style="height: 4vh;" class="sm">
+                    <h6>{{currpost.name |capitalize}},<small> {{currpost.date.toDate() |date:'MMM, d , y , h:mm a'}}</small></h6>
+                </div>
+                <div style="height: 3vh;" class="sm">
+                    <h6>{{currpost.interest}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="postdata"><h5>{{currpost.title | capitalize}}</h5>
+        <h6>{{currpost.postdata}}</h6>
+        </div>
+        <div style="margin-top: 2vh; display:flex; align-items: center; font-size: 2rem;">Comments on the Thought :</div>
+        <app-comment *ngFor="let comm of comments" [comm]='comm' ></app-comment>
+
+        <div style="margin-top: 2vh; display:flex; align-items: center; font-size: 2rem;">Other Thoughts By User</div>
+        <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<nav style="background-color: lawngreen" class="navbar navbar-expand-lg">
+  <div style="width: 30vw" class="aa">
+    <h4>THOUGHT</h4>
+    <h4 (click)="navhome()" >HOME PAGE</h4>
+    <h4 (click)="checkRoute()">MY PROFILE</h4>
+  </div>
+  <div *ngIf='!user' style="width: 50vw" class="aa">
+    <form
+      style="display: flex; justify-content: space-around; width: 100%"
+      [formGroup]="loginForm"
+      (ngSubmit)="login(loginForm)"
+    >
+      <div class="ff">
+        <input
+
+          type="email"
+          class="inp"
+          placeholder=Email
+          [formControl]="$any(loginForm).controls.email"
+        />
+        
+      </div>
+      <div class="ff">
+        <input
+          type="password"
+          class="inp"
+          placeholder="Password"
+          [formControl]="$any(loginForm).controls.password"
+        />
+      </div>
+      <div style="align-items: center" class="ff">
+        <button [disabled]="loginForm.invalid" type="submit" class="btn">
+          Login
+        </button>
+        <small *ngIf="(loginm.length>5)" class="warn">Incorrect Email or Password</small>
+      </div>
+    </form>
+  </div>
+  <div *ngIf='user' style="width: 30vw" class="aa">
+  <h4 ><a style="text-decoration: none; color: black;" routerLink="/profile/{{user.uid}}"><img style="height: 5vh; width: 5vw;" [src]=user.photoURL alt="">{{user.displayName | capitalize}}</a></h4>
+  <h4 (click)="logout()" >Logout</h4>
+</div>
+</nav>

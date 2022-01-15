@@ -1,0 +1,101 @@
+<app-menu></app-menu>
+<div class="master">
+  <div class="left">
+    <h3>something written about the app and working of the app</h3>
+  </div>
+  <div class="right">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignup(signUpForm)">
+      <div class="formrow">
+        <div>
+          <input
+            type="text"
+            class="formInput"
+            placeholder="FirstName"
+            [formControl]="$any(signUpForm).controls.firstName"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="formInput"
+            placeholder="LastName"
+            [formControl]="$any(signUpForm).controls.lastName"
+          />
+        </div>
+        <small
+          *ngIf="
+            (!signUpForm.controls['firstName'].valid ||
+              !signUpForm.controls['lastName'].valid) &&
+            signUpForm.controls['firstName'].touched &&
+              signUpForm.controls['lastName'].touched
+          "
+          class="warn"
+          >First and Last name is required</small
+        >
+      </div>
+      <div class="formrow">
+        <input
+          type="email"
+          class="formInput"
+          placeholder="Email"
+          [formControl]="$any(signUpForm).controls.email"
+          style="width: 98%"
+        />
+        <small
+          class="warn"
+          *ngIf="
+            signUpForm.controls['email'].invalid &&
+            signUpForm.controls['email'].touched
+          "
+          >Please enter a valid Email</small
+        >
+      </div>
+      <div class="formrow">
+        <input
+          type="password"
+          class="formInput"
+          placeholder="Password"
+          [formControl]="$any(signUpForm).controls.password"
+          style="width: 98%"
+        />
+        <small
+          class="warn"
+          *ngIf="
+            signUpForm.controls['password'].invalid &&
+            signUpForm.controls['password'].touched
+          "
+          >Password should have minimum 8 characters</small
+        >
+      </div>
+      <div class="formrow">
+        <input
+          type="password"
+          class="formInput"
+          placeholder="Confirm Password"
+          [formControl]="$any(signUpForm).controls.confirmpassword"
+          style="width: 98%"
+        />
+        <small
+          *ngIf="
+            signUpForm.controls['confirmpassword'].touched &&
+            signUpForm.controls['confirmpassword'].errors
+          "
+          class="warn"
+          >Passwords do not match</small
+        >
+      </div>
+      <div class="formrow">
+        <button
+          [disabled]="signUpForm.invalid"
+          type="submit"
+          style="width: 50%"
+          class="btn"
+        >SignUp
+        </button>
+      </div>
+      <div class="formrow">
+        <small *ngIf='(message.length>0)' style="font-size: large;" class="warn">{{message}}</small>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.postview{
+    display: flex;
+    justify-content: space-around;
+
+}
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+}
+.post{
+    width: 70vw;
+    min-height: 30vh;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    flex-grow: inherit;
+}
+.userinfo{
+    width: 70vw;
+    border: 1px solid palegoldenrod;
+    height: 9vh;
+    padding:1vh;
+    display: flex;
+    flex-direction: row;
+}
+.postdata{
+    max-width: 120ch;
+    min-height: 23vh;
+    display: flex;
+    flex-grow: unset;
+    flex-direction: column;
+    padding:1vw;
+    overflow: scroll;
+    border: 1px solid black;
+}
+.image{
+    width: 7vw;
+    height: 7vh;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.other{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 7vh;
+    justify-content: space-between;
+}
+.sm{
+    margin-left: 0.5vw;
+}

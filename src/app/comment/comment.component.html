@@ -1,0 +1,9 @@
+
+<div class="postcomment">
+    <div class="userinfo">
+       <a routerLink="/profile/{{currdata.id}}" > <img [src]=currdata.image class="image"></a>
+        {{currdata.name | capitalize}} ,
+        <small>{{currdata.date.toDate() | date:' MMM, d ,y , h:mm a'}}</small>
+    </div>
+    <div class="commentinfo">{{currdata.comment}}</div>
+</div>

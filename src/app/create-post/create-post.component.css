@@ -1,0 +1,61 @@
+.createcont{
+    width: 60vw;
+    height: 42vh;
+    border:1px solid green;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1vh;    
+}
+.infodiv{
+    display: flex;
+    padding-left: 1vw;
+    /* border: 1px solid black; */
+    height: 7vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.formrow{
+    display: flex;
+    justify-content: space-around;
+    height: 7vh;
+    width: 60vw;
+    /* border: 1px dashed firebrick; */
+}
+
+.postdiv{
+    display: flex;
+}
+
+.smallinp{
+    width: 27vw;
+    text-decoration: none;
+    border: 1px solid grey;
+    border-radius: 10px;
+
+}
+::placeholder{
+    color: skyblue;
+}
+.post{
+    width: 57vw;
+    height: 15vh;
+    /* border:1px solid wheat; */
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.pb{
+    background-color: teal;
+    color: whitesmoke;
+    width: 15vw;
+    font-size: 3vh;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.im{
+    width: 5vw;
+    border-radius: 50%;
+    height: 7vh;
+}

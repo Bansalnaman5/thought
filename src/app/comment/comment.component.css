@@ -1,0 +1,23 @@
+.postcomment{
+    border: 1px solid black;
+    width: 60vw;
+    min-height: 20vh;
+    margin-bottom: 1vh;
+}
+.userinfo{
+    border: 1px solid green;
+    height: 8vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.commentinfo{
+    padding: 2vw;
+    border: 1px solid khaki;
+    min-height: 12vh;
+}
+.image{
+    height: 7vh;
+    width: 5vw;
+    margin-right: 1vw;
+}

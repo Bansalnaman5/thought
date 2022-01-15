@@ -1,0 +1,27 @@
+<div class="mypost">
+    <div class="sec1">
+        <div class="postinfo">
+            <div class="imagediv">
+                <a routerLink="/profile/{{postData.ownerid}}" ><img style="width: 5vw; height: 5vh;" [src]="postData.image" alt="user"></a>
+            </div>
+            <div class="infodiv">
+                <div class="infosubdiv"><span>{{postData.name | capitalize}},<small>{{postData.date.toDate() |date:'MMM, d, y'}} at {{postData.date.toDate() | date:'h:mm a'}}</small></span></div>
+                <div class="infosubdiv"><span>{{postData.interest}}</span></div>
+            </div>
+        </div> 
+        <div class="postdata">
+            <h5>{{postData.title | capitalize}}</h5>
+            <h6 style="max-width: 100ch;">{{postData.postdata.substr(0,100)}}</h6>
+            <span style="color: blue; font-weight: lighter; font-size: 1rem;" *ngIf="postData.postdata.length>101"><a routerLink="/view/{{post.id}}">...</a></span>
+        </div>
+    </div>
+    <div class="sec2">
+        <h5 style="cursor: pointer;" (click)="like()">Like {{likelen}}</h5>
+        <h5 (click)="showcomment()" style="cursor: pointer;" >Comment {{commentlen}}</h5>
+        <h5 ><a routerLink="/view/{{post.id}}">View</a></h5>
+    </div>
+    <div [ngStyle]="{'transform':t,'display':showComment}" class="comm">
+        <div class="comminp"><input style="padding: 1vh;" [(ngModel)]="comment" class="comminp" type="text"></div>
+        <div class="bbtt" (click)="postComment()" >POST COMMENT</div>
+    </div>
+</div>
